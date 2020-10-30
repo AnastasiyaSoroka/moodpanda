@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.Configuration;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -21,7 +22,7 @@ public class BaseTest {
     public static final String URL = "https://moodpanda.com";
 
     @BeforeMethod
-    public void setup() {
+    public void setup(ITestContext context) {
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;

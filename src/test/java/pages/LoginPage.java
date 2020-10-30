@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 import static tests.BaseTest.URL;
+import utils.AllureUtils;
 
 public class LoginPage extends BasePage {
 
@@ -14,10 +15,6 @@ public class LoginPage extends BasePage {
     public static String LOGIN_BTN_CSS = "#ContentPlaceHolderContent_ButtonLogin";
     public static String GP_ICON_CSS = "[alt='MoodPanda Android App on Google Play']";
     public static String endpoint = "/login";
-
-    public LoginPage updateMood() {
-        return this;
-    }
 
     public LoginPage login(String username, String password) {
         $(EMAIL_CSS).setValue(username);
@@ -35,6 +32,7 @@ public class LoginPage extends BasePage {
     public LoginPage openPage() {
         open(URL + endpoint);
         isPageOpened();
+        AllureUtils.takeScreenshot();
         return this;
     }
 

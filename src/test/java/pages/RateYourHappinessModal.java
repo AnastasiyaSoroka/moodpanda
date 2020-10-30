@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
+import utils.AllureUtils;
 import utils.MyCalendar;
 import utils.MyClock;
 
@@ -45,10 +46,6 @@ public class RateYourHappinessModal extends BasePage {
         return this;
     }
 
-    public RateYourHappinessModal updateMood() {
-        return this;
-    }
-
     @Step("Click Update Mood button")
     public RateYourHappinessModal updateMoodBtn() {
         $(UPDATE_BTN_CSS).click();
@@ -73,6 +70,7 @@ public class RateYourHappinessModal extends BasePage {
     public RateYourHappinessModal updateMood(int moodRating, String description) {
         changeSlider(moodRating);
         $(DESCRIPTION_CSS).setValue(description);
+        AllureUtils.takeScreenshot();
         updateMoodBtn();
         return this;
     }

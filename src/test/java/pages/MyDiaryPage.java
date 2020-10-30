@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Step;
+import utils.AllureUtils;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -22,12 +24,10 @@ public class MyDiaryPage extends BasePage {
         return $(DATE_CSS).getText();
     }
 
+    @Step("My Diary page was opened")
     public MyDiaryPage isPageOpened() {
         $(DESCRIPTION_CSS).waitUntil(Condition.visible, 10000);
-        return this;
-    }
-
-    public MyDiaryPage updateMood() {
+        AllureUtils.takeScreenshot();
         return this;
     }
 

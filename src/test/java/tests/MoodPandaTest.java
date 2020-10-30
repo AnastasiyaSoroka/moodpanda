@@ -69,7 +69,6 @@ public class MoodPandaTest extends BaseTest {
                 .getDescription();
 
         Assert.assertEquals(actualDescription, description, "Description is not correct in the Dairy");
-
     }
 
     @Test(description = "Check that User can update his mood with rate, description and selected date")
