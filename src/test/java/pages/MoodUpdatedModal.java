@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -10,10 +9,6 @@ public class MoodUpdatedModal extends BasePage {
 
     public static final String LABEL_CSS = ".modal-title";
     public static final String GOTODIARY_BTN_CSS = ".ButtonMyDiary";
-
-    public MoodUpdatedModal(WebDriver driver) {
-        super(driver);
-    }
 
     public MoodUpdatedModal isPageOpened() {
         $(LABEL_CSS).waitUntil(Condition.visible, 10000);

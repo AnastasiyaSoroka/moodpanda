@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -12,10 +11,6 @@ public class FeedPage extends BasePage {
 
     public FeedPage updateMood() {
         return this;
-    }
-
-    public FeedPage(WebDriver driver) {
-        super(driver);
     }
 
     @Step("Feed page was opened")

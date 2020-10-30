@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import utils.MyCalendar;
 import utils.MyClock;
 
@@ -44,10 +43,6 @@ public class RateYourHappinessModal extends BasePage {
     public RateYourHappinessModal isPageOpened() {
         $(SLIDER_CSS).waitUntil(Condition.visible, 10000);
         return this;
-    }
-
-    public RateYourHappinessModal(WebDriver driver) {
-        super(driver);
     }
 
     public RateYourHappinessModal updateMood() {

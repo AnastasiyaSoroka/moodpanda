@@ -2,7 +2,6 @@ package tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.Configuration;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -12,7 +11,6 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 public class BaseTest {
 
-    private WebDriver driver;
     LoginPage loginPage;
     FeedPage feedPage;
     MoodUpdatedModal moodUpdatedModal;
@@ -29,11 +27,11 @@ public class BaseTest {
         Configuration.timeout = 10000;
         Configuration.headless = false;
         Configuration.browserVersion = "86.0.4240.111";
-        loginPage = new LoginPage(driver);
-        feedPage = new FeedPage(driver);
-        rateYourHappinessModal = new RateYourHappinessModal(driver);
-        moodUpdatedModal = new MoodUpdatedModal(driver);
-        myDiaryPage = new MyDiaryPage(driver);
+        loginPage = new LoginPage();
+        feedPage = new FeedPage();
+        rateYourHappinessModal = new RateYourHappinessModal();
+        moodUpdatedModal = new MoodUpdatedModal();
+        myDiaryPage = new MyDiaryPage();
     }
 
     @AfterMethod(alwaysRun = true)

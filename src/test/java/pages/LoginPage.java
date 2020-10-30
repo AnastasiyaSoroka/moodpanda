@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
@@ -15,10 +14,6 @@ public class LoginPage extends BasePage {
     public static String LOGIN_BTN_CSS = "#ContentPlaceHolderContent_ButtonLogin";
     public static String GP_ICON_CSS = "[alt='MoodPanda Android App on Google Play']";
     public static String endpoint = "/login";
-
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
 
     public LoginPage updateMood() {
         return this;
