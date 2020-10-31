@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.*;
+import utils.PropertyReader;
 import utils.TestListener;
 
 @Listeners(TestListener.class)
@@ -17,8 +18,8 @@ public class BaseTest {
     MoodUpdatedModal moodUpdatedModal;
     RateYourHappinessModal rateYourHappinessModal;
     MyDiaryPage myDiaryPage;
-    public static final String USERNAME = System.getProperty("username");
-    public static final String PASSWORD = System.getProperty("password");
+    public static final String USERNAME = System.getenv().getOrDefault("username",PropertyReader.getProperty("username"));
+    public static final String PASSWORD = System.getenv().getOrDefault("password", PropertyReader.getProperty("password"));
     public static final String URL = "https://moodpanda.com";
 
     @BeforeMethod

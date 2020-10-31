@@ -12,7 +12,7 @@ public class FeedPage extends BasePage {
 
     @Step("Feed page was opened")
     public FeedPage isPageOpened() {
-        $(UPDATE_MOOD_CSS).waitUntil(Condition.visible, 20000);
+        $(UPDATE_MOOD_CSS).waitUntil(Condition.visible, 10000);
         AllureUtils.takeScreenshot();
         return this;
     }
