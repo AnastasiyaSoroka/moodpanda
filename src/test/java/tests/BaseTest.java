@@ -18,8 +18,10 @@ public class BaseTest {
     MoodUpdatedModal moodUpdatedModal;
     RateYourHappinessModal rateYourHappinessModal;
     MyDiaryPage myDiaryPage;
-    public static final String USERNAME = System.getenv().getOrDefault("username",PropertyReader.getProperty("username"));
-    public static final String PASSWORD = System.getenv().getOrDefault("password", PropertyReader.getProperty("password"));
+    public static final String USERNAME = System.getProperty("username");
+    //System.getenv().getOrDefault("username",PropertyReader.getProperty("username"));
+    public static final String PASSWORD = System.getProperty("password");
+    //System.getenv().getOrDefault("password", PropertyReader.getProperty("password"));
     public static final String URL = "https://moodpanda.com";
 
     @BeforeMethod
